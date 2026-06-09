@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Jennefel ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background:linear-gradient(to bottom,#0f172a,#1e293b,#111827);
+    font-family:'Georgia', serif;
+    color:white;
+}
+
+/* Rose */
+.rose-container{
+    position:relative;
+    width:250px;
+    height:350px;
+    animation: sway 4s ease-in-out infinite alternate;
+}
+
+.stem{
+    position:absolute;
+    width:8px;
+    height:180px;
+    background:#1faa59;
+    left:50%;
+    bottom:40px;
+    transform:translateX(-50%);
+}
+
+.leaf{
+    position:absolute;
+    width:50px;
+    height:25px;
+    background:#2ecc71;
+    border-radius:50px 0;
+}
+
+.leaf1{
+    bottom:130px;
+    left:52%;
+    transform:rotate(35deg);
+}
+
+.leaf2{
+    bottom:90px;
+    right:52%;
+    transform:rotate(-145deg);
+}
+
+.rose{
+    position:absolute;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    width:150px;
+    height:150px;
+}
+
+.petal{
+    position:absolute;
+    width:80px;
+    height:80px;
+    background:linear-gradient(135deg,#ff1744,#d50000);
+    border-radius:50% 50% 0 50%;
+    transform-origin:bottom right;
+    opacity:0;
+    animation:bloom 2s forwards;
+}
+
+.petal:nth-child(1){transform:rotate(0deg);animation-delay:0.2s;}
+.petal:nth-child(2){transform:rotate(45deg);animation-delay:0.4s;}
+.petal:nth-child(3){transform:rotate(90deg);animation-delay:0.6s;}
+.petal:nth-child(4){transform:rotate(135deg);animation-delay:0.8s;}
+.petal:nth-child(5){transform:rotate(180deg);animation-delay:1s;}
+.petal:nth-child(6){transform:rotate(225deg);animation-delay:1.2s;}
+.petal:nth-child(7){transform:rotate(270deg);animation-delay:1.4s;}
+.petal:nth-child(8){transform:rotate(315deg);animation-delay:1.6s;}
+
+.center{
+    position:absolute;
+    width:50px;
+    height:50px;
+    background:#8b0000;
+    border-radius:50%;
+    top:50px;
+    left:50px;
+    opacity:0;
+    animation:appear 1s forwards 2s;
+}
+
+/* Love Letter */
+.letter{
+    max-width:90%;
+    width:500px;
+    margin-top:30px;
+    text-align:center;
+    padding:20px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    min-height:180px;
+}
+
+#typewriter{
+    font-size:18px;
+    line-height:1.8;
+}
+
+.cursor{
+    display:inline-block;
+    width:3px;
+    background:white;
+    animation:blink 0.8s infinite;
+}
+
+/* Hearts */
+.heart{
+    position:absolute;
+    color:#ff4d6d;
+    animation:float linear forwards;
+}
+
+/* Animations */
+@keyframes bloom{
+    from{
+        opacity:0;
+        transform:scale(0) rotate(0deg);
+    }
+    to{
+        opacity:1;
+        transform:scale(1) rotate(var(--rotate));
+    }
+}
+
+@keyframes appear{
+    to{
+        opacity:1;
+    }
+}
+
+@keyframes sway{
+    from{transform:rotate(-2deg);}
+    to{transform:rotate(2deg);}
+}
+
+@keyframes blink{
+    50%{
+        opacity:0;
+    }
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-100vh);
+        opacity:0;
+    }
+}
+
+@media(max-width:600px){
+    .letter{
+        width:90%;
+    }
+
+    #typewriter{
+        font-size:16px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Music -->
+<audio id="bgMusic" autoplay loop>
+    <source src="best-in-me.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Rose -->
+<div class="rose-container">
+
+    <div class="rose">
+        <div class="petal" style="--rotate:0deg"></div>
+        <div class="petal" style="--rotate:45deg"></div>
+        <div class="petal" style="--rotate:90deg"></div>
+        <div class="petal" style="--rotate:135deg"></div>
+        <div class="petal" style="--rotate:180deg"></div>
+        <div class="petal" style="--rotate:225deg"></div>
+        <div class="petal" style="--rotate:270deg"></div>
+        <div class="petal" style="--rotate:315deg"></div>
+
+        <div class="center"></div>
+    </div>
+
+    <div class="stem"></div>
+
+    <div class="leaf leaf1"></div>
+    <div class="leaf leaf2"></div>
+
+</div>
+
+<!-- Love Letter -->
+<div class="letter">
+    <h2>🌹 For Jennefel Rebusa 🌹</h2>
+    <br>
+    <span id="typewriter"></span>
+    <span class="cursor"></span>
+</div>
+
+<script>
+const text = `Dear Jennefel,
+
+From the moment you came into my life, everything became more beautiful.
+
+Your smile brightens my darkest days, and your love gives me strength and happiness.
+
+Thank you for being my best friend, my safe place, and the person I want to share my dreams with.
+
+No matter where life takes us, I promise to cherish every moment we have together.
+
+Like this rose that continues to bloom, my love for you grows stronger every single day.
+
+You are my today, my tomorrow, and my forever.
+
+❤️ I love you endlessly ❤️
+
+– Micah`;
+
+let i = 0;
+const speed = 45;
+
+function typeWriter() {
+    if (i < text.length) {
+        document.getElementById("typewriter").innerHTML +=
+            text.charAt(i) === "\n" ? "<br><br>" : text.charAt(i);
+
+        i++;
+        setTimeout(typeWriter, speed);
+    }
+}
+
+setTimeout(typeWriter, 2500);
+
+/* Floating Hearts */
+function createHeart() {
+    const heart = document.createElement("div");
+
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.fontSize = Math.random() * 20 + 15 + "px";
+    heart.style.animationDuration = Math.random() * 4 + 4 + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 8000);
+}
+
+setInterval(createHeart, 500);
+
+/* Handle autoplay restrictions */
+document.body.addEventListener('click', () => {
+    document.getElementById('bgMusic').play();
+}, { once: true });
+</script>
+
+</body>
+</html>
