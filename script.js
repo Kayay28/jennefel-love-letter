@@ -1,0 +1,5 @@
+const msg=`Dear Jennefel, Like these roses, my love for you blooms more each day. Thank you for being my happiness. ❤️ - Micah`;
+let i=0;function type(){if(i<msg.length){document.getElementById('typewriter').textContent+=msg[i++];setTimeout(type,50)}} type();
+const c=document.getElementById('canvas'),x=c.getContext('2d'); function r(){c.width=innerWidth;c.height=innerHeight} r(); onresize=r;
+const colors=['#00e5ff','#ff1744','#ff80ab','#b388ff']; let t=0;
+function draw(){x.clearRect(0,0,c.width,c.height); for(let j=0;j<5;j++){let cx=c.width/2+(j-2)*80,cy=c.height/3+Math.sin(t/20+j)*10; x.strokeStyle=colors[(Math.floor(t/50)+j)%4]; x.lineWidth=3; x.beginPath(); x.moveTo(cx,cy); x.lineTo(cx,c.height/2); x.stroke(); for(let k=0;k<8;k++){let a=k*Math.PI/4; x.fillStyle=x.strokeStyle; x.beginPath(); x.arc(cx+Math.cos(a)*20,cy+Math.sin(a)*20,12,0,6.28); x.fill();}} t++; requestAnimationFrame(draw)} draw();
